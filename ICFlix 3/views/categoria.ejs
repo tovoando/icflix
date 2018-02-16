@@ -1,0 +1,46 @@
+<html ng-app="listaContatos">
+      <head>
+        <title>Icflix</title>
+        <link rel="stylesheet" href="projeto.css">
+        <link rel="stylesheet" href="categoria.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="angularApp.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+      </head>
+
+  <body ng-controller="mainController">
+
+        <form>
+                                <input type="text" placeholder="Pesquisar..." id="pesquisar1" required>
+                                <input type="button" value="Search" id="pesquisar2">
+</form>
+        <a href="http://localhost:8080/principal"><h1 >ICFLIX</h1></a>
+        <div class="dropdown">
+<button class="dropbtn">Navegador</button>
+<div class="dropdown-content">
+  <div id="opc">
+    <a href="http://localhost:8080/categoria">Ação</a>
+    <a href="http://localhost:8080/categoria3">Comédia</a>
+    <a  href="http://localhost:8080/categoria2">Suspense</a>
+</div>
+</div>
+</div>
+<div id="nome">
+
+</div>
+<div id="filmescat">
+  <div ng-repeat="contato in contatos" ng-init="myVar = compare(contato.categoria)">
+    <div ng-show="myVar">
+    <a ng-click="gravar(contato._id)" href= "{{contato._id}}" ng-init="teste22 = guard(contato._id)"><img ng-src="{{contato.imagem}}"></img><a>
+</div>
+</div>
+</div>
+
+
+
+    </body>
+
+</html>

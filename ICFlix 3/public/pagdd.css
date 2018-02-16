@@ -1,0 +1,106 @@
+#nome
+{
+  width: 100%;
+  background-color: black;
+  filter: opacity(35%);
+  top: 0%;
+  left:0%;
+  z-index:5;
+  position: fixed;
+  height:4em;
+  z-index: 7;
+}
+#recomendados
+{
+
+  color:white;
+  padding-left: 5%;
+  width: 30%;
+padding-top: 23%;
+
+}
+.mySlides
+{
+  width:30% ;
+  height:35%;
+  left:55%;;
+  position: absolute;
+  top:89%;
+
+
+}
+.rec{
+
+  height: 20%;
+  border: solid;
+  border-color: black;
+  border-width: 0%;
+  z-index: 40;
+}
+#snps {
+  color:white;
+  position: absolute;
+  padding-left: 5%;
+  width: 30%;
+  position: absolute;
+  top:25%;
+
+  text-align: left;
+
+}
+iframe
+{
+  padding-left:55%;
+  position: absolute;
+  top:18%;
+
+
+  border-radius: 20px;
+
+}
+#live
+{
+  font-family: serif;
+  font-size: 20px;
+  position: absolute;
+  top:64%;
+  left:25%;
+  background-color: red;
+  border: none;
+  color:white;
+  width: 6%;
+  height: 5%;
+cursor: pointer;
+  filter: brightness(70%);
+  font-style:
+}
+a{
+  cursor: pointer;
+  z-index: 30;
+}
+
+#imdb
+{
+
+  position: absolute;
+  top:23%;
+  padding-left: 35%;
+  width: 10%;
+}
+#caixa
+{
+  width:20%;
+   float:left;
+   overflow:hidden;
+   padding-left:5px;
+}
+#NomeFilme
+{
+
+
+  padding-top:3%;
+  color:white;
+  padding-left:5%;
+  font-size:50px;
+  font-family:serif;
+}

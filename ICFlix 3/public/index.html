@@ -1,0 +1,120 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ESPECIFICANDO NOSSO MÓDULO ANGULAR listaContatos -->
+<html ng-app="listaContatos">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <!-- Otimizar a exibição em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lista de Filmes</title>
+
+    <!-- CSS -->
+    <!-- Carregando o bootstrap-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #lista-contatos         { margin-bottom:30px; }
+        form button             { margin-top: 25px; }
+        form .form-group:first-child { padding-left: 0; }
+    </style>
+
+    <!-- JS -->
+        <!-- Carregando a biblioteca jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <!-- Carregando a biblioteca AngularJS -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+        <script src="angularApp.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
+</head>
+<!-- DEFINE O CONTROLLER E BUSCA TODOS OS CONTATOS -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- CABEÇALHO E TOTAL DE CONTATOS -->
+        <div class="jumbotron text-center">
+            <h1>Lista de Filmes <span class="label label-info">{{ contatos.length }}</span></h1>
+        </div>
+
+        <!-- LISTA NOSSOS CONTATOS -->
+        <div id="lista-contatos">
+            <table class="table table-striped">
+
+                <tr>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Opções</th>
+                </tr>
+
+                <!-- LOOP PARA CARREGAR TODOS OS CONTATOS EM $scope.contatos -->
+                <tr ng-repeat="contato in contatos">
+                    <td>{{ contato.nome }}</td>
+                    <td>{{ contato.categoria }}</td>
+
+                    <td>
+                        <button type="button" class="btn btn-default" ng-click="editarContato(contato._id)">Editar</button>
+                        <button type="button" class="btn btn-primary" ng-click="deletarContato(contato._id)">Remover</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <!-- FORMULÁRIO PARA CRIARMOS UM NOVO CONTATO -->
+        <div id="contato-form">
+            <hr>
+            <form>
+                <div class="form-group col-md-3">
+                    <label for="nomeContato">Nome do Filme</label>
+                    <input type="text" class="form-control" id="nomeContato" placeholder="Nome do Filme" ng-model="formContato.nome">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="categoriaContato">Categoria</label>
+                    <input type="text" class="form-control" id="categoriaContato" placeholder="Ação e Aventura, Suspense ou Comédia" ng-model="formContato.categoria">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="sinopseContato">Descrição</label>
+                    <input type="text" class="form-control" id="sinopseContato" placeholder="Descrição do filme" ng-model="formContato.sinopse">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="youtubeContato">Trailer</label>
+                    <input type="text" class="form-control" id="youtubeContato" placeholder="URL Youtube" ng-model="formContato.youtube">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="imagemContato">Imagem de Capa</label>
+                    <input type="text" class="form-control" id="imagemContato" placeholder="URL da Imagem da Capa" ng-model="formContato.poster">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="slide1Contato">Screenshot 1</label>
+                    <input type="text" class="form-control" id="slide1Contato" placeholder="URL da Imagem 1" ng-model="formContato.imagem1">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="slide2Contato">Screenshot 2</label>
+                    <input type="text" class="form-control" id="slide2Contato" placeholder="URL da Imagem 2" ng-model="formContato.imagem2">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="slide3Contato">Screenshot 3</label>
+                    <input type="text" class="form-control" id="slide3Contato" placeholder="URL da Imagem 3" ng-model="formContato.imagem3">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="netflixContato">Link de Compra</label>
+                    <input type="text" class="form-control" id="netflixContato" placeholder="URL Comprar" ng-model="formContato.store">
+                </div>
+                <div class="form-group col-md-3">
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button type="submit" class="btn btn-primary" ng-click="criarContato()">Criar</button>
+                    <button type="submit" class="btn btn-info" ng-click="atualizarContato()">Atualizar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+	<meta charset="utf-8">
+	<title>ICFlix</title>
+
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/footer.css" />
+
+	<link href='./images/favicon.ico' rel='icon' type='image/x-icon'/>
+
+	<script type="text/javascript" src="js/movie.js"></script>
+
+</head>
+<body>
+<!--------------Header------------- -->
+<header>
+	<div class="wrap-header divprincipal">
+		<div id="logo"><a href="./index.html"><img src="./images/logo.png"/></a></div>
+
+		<div id="search">
+			<div class="button-search"></div>
+			<input type="text" placeholder="Procurar..." >
+		</div>
+	</div>
+</header>
+
+<div class="navigation">
+    <ul>
+			<li><a href="./index.html">HOME</a></li>
+			<li class="has-menu"><a href="#">CATEGORIAS</a>
+				<ul class="sub-menu">
+					<li><a href="./index.html#acaoeaventura">Ação e Aventura</a></li>
+					<li><a href="./index.html#comedia">Comédia</a></li>
+          <li><a href="./index.html#suspense">Suspense</a></li>
+				</ul>
+			</li>
+			<li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#servicos">SERVIÇOS</a></li>
+		</ul>
+	</div>
+
+<!--------------Content------------- -->
+<section id="content">
+	<div class="wrap-content zerogrid">
+		<div class="row block03">
+			<div class="col-2-3">
+				<div class="wrap-col">
+					<article>
+
+						<h2 id="movieTitle"></h2>
+						<br>
+						<iframe title="YouTube video player" class="youtube-player" type="text/html" id="iframeMovie"
+						style="float: left; width: 600px" height="400px" src="https://www.youtube.com/embed/IHDgrNxO-5I"
+						frameborder="0" allowFullScreen></iframe>
+						<h3 style="text-indent: 50px;">Sinopse</h3>
+
+						<div class="movie-description" id="description">
+						</div>
+						<br>
+						<br>
+						<div class="button-buy-container" style="height: 50px">
+							<div style="position: absolute;left:50%;-webkit-transform:translateX(-50%);transform: translateX(-50%);">
+							<a id="link-to-buy" class="button-buy" href="#" target="_blank">COMPRAR / ASSISTIR</a>
+							<div class="rating">
+								<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+							</div>
+							</div>
+						</div>
+						<br />
+						<div class="img-container">
+							<img style="width: 244px; height: 137px;display: none; " src="./images/batman.jpg" id="imgPrincipal" />
+
+							<h3 style="text-indent: 50px;">Screenshots</h3>
+							<div style="position:relative;display: inline-block;width:100%;height:157px;margin:20px 0 20px;float:left">
+							<div class="gallery-content">
+								<div class="gallery">
+								  <a href="javascript:void(0)" onclick="showImage(1)" >
+								    <img alt="Imagem 1" id="img1">
+								  </a>
+								</div>
+								<div class="gallery">
+								  <a href="javascript:void(0)" onclick="showImage(2)">
+								    <img alt="Imagem 2" id="img2">
+								  </a>
+								</div>
+								<div class="gallery">
+								  <a href="javascript:void(0)" onclick="showImage(3)" >
+								    <img alt="Imagem 3" id="img3">
+								  </a>
+								</div>
+							</div>
+						</div>
+						</div>
+						<br><br><br><br>
+
+						<h3 style="display:inline-block">Filmes relacionados</h3>
+						<div class="related-movies" id="relatedMovies"></figure>
+						</div>
+
+
+						<div class="comment">
+
+							<form>
+							<p style="display:inline-block">Seu email não será revelado. Campos requeridos estão marcados com *</p>
+								<div><input type="text" name="name" id="name"> Nome *</div>
+								<div><input type="email" name="email" id="email"> Email *</div>
+								<div><textarea rows="10" name="comment" id="comment"></textarea></div>
+								<div><input type="submit" name="submit" value="Comentar"></div>
+							</form>
+						</div>
+					</article>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!--------------Footer------------- -->
+<footer>
+	<div class="wrap-footer divprincipal">
+		<div class="row block09">
+			<div class="col-2-4">
+				<div class="wrap-col">
+					<div class="box">
+						<span class="mw-headline" id="sobre">
+						<div class="heading"><h2>Sobre</h2></div></span>
+						<div class="content">
+							<p>O ICflix é um provedor de filmes e séries de televisão via streaming, atualmente com mais de 500 mil assinantes.</p>
+              <p>Fundada em 2017 em Alagoas, atualmente tornou-se a plataforma mais popular na região do nordeste.</p>
+              <p>A expansão do streaming começou por Maceió no início de Janeiro.</p>
+              <p>Hoje, mais de 15 cidades têm acesso à plataforma, que disponibiliza do primeiro mês de assinatura grátis.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-2-4">
+				<div class="wrap-col">
+					<div class="box">
+						<span class="mw-headline" id="servicos">
+						<div class="heading"><h2>Serviços</h2></div></span>
+						<div class="content">
+							<p>O ICflix disponibiliza três planos de transmissão para atender ao seu estilo:</p>
+              <p><strong>• Plano básico:</strong> plano de 1 tela SD (assista em 1 aparelho de cada vez em definição padrão).</p>
+              <p><strong>• Plano padrão:</strong> plano de 2 telas HD (assista em 2 aparelhos de cada vez e em alta definição, quando disponível).</p>
+              <p><strong>• Plano premium:</strong> plano de 4 telas HD/Ultra HD 4K (assista em até 4 aparelhos de cada vez em alta definição e em ultra-alta definição, quando disponível).</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-social-icons">
+    				<ul class="social-icons">
+        				<li><a href="http://www.facebook.com/ICflix" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+        				<li><a href="http://www.twitter.com/icflixoficial" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+        				<li><a href="http://www.instagram.com/icflixbr" target="_blank" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
+       				 	<li><a href="http://www.youtube.com/icflixchannel" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+    				</ul>
+			</div>
+		</div>
+
+	</div>
+</footer>
+
+</body></html>

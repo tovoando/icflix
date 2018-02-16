@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="listaContatos">
+<head>
+
+  <meta charset="utf-8">
+  <title>ICFlix</title>
+
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="footer.css" />
+
+  <link href='/images/favicon.ico' rel='icon' type='image/x-icon'/>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="angularApp.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+<!--------------Header------------- -->
+<header>
+  <div class="wrap-header divprincipal">
+    <div id="logo"><a href="/principal"><img src="/images/logo.png"/></a></div>
+
+    <div id="search">
+      <div class="button-search"></div>
+      <input type="text" placeholder="Procurar..." >
+    </div>
+  </div>
+</header>
+
+<div class="navigation">
+    <ul>
+      <li><a href="/principal">HOME</a></li>
+      <li class="has-menu"><a href="#">CATEGORIAS</a>
+        <ul class="sub-menu">
+          <li><a href="#acaoeaventura">Ação e Aventura</a></li>
+          <li><a href="#comedia">Comédia</a></li>
+          <li><a href="#suspense">Suspense</a></li>
+        </ul>
+      </li>
+      <li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#servicos">SERVIÇOS</a></li>
+    </ul>
+  </div>
+
+<section id="slide">
+  <div>
+    <center><img src="gif/slide.gif"></center>
+  </div>
+</section>
+
+<!--------------Content------------- -->
+<section id="content">
+  <div class="wrap-content divprincipal">
+    <span class="mw-headline" id="acaoeaventura">
+    <h2>Ação e Aventura</h2><hr/></span>
+    <div class="row block03">
+      <div ng-repeat="contato in contatos" ng-init="myVar = compare(contato.categoria)">
+        <div class="col-1-6" ng-show="myVar">
+          <div class="wrap-col">
+             <div class="hoverzoom">
+                <img src="{{contato.poster}}">
+                  <div class="retina">
+                    <p>{{contato.nome}}</p>
+                  <a ng-click="gravar(contato._id)" href="/{{contato._id}}" ng-init="teste22 = guard(contato._id)">Assistir</a>
+                 </div>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <span class="mw-headline" id="comedia">
+    <h2>Comédia</h2><hr/></span>
+    <div class="row block03">
+      <div ng-repeat="contato in contatos" ng-init="myVar = compare3(contato.categoria)">
+        <div class="col-1-6" ng-show="myVar">
+          <div class="wrap-col">
+             <div class="hoverzoom">
+                <img src="{{contato.poster}}">
+                  <div class="retina">
+                    <p>{{contato.nome}}</p>
+                  <a  ng-click="gravar(contato._id)" href="/{{contato._id}}" ng-init="teste22 = guard(contato._id)">Assistir</a>
+                 </div>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <span class="mw-headline" id="suspense">
+    <h2>Suspense</h2><hr/></span>
+    <div class="row block03">
+      <div ng-repeat="contato in contatos" ng-init="myVar = compare2(contato.categoria)">
+        <div class="col-1-6" ng-show="myVar">
+          <div class="wrap-col">
+             <div class="hoverzoom">
+                <img src="{{contato.poster}}">
+                  <div class="retina">
+                    <p>{{contato.nome}}</p>
+                  <a ng-click="gravar(contato._id)" href="/{{contato._id}}" ng-init="teste22 = guard(contato._id)">Assistir</a>
+                 </div>
+                </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--------------Footer------------- -->
+<footer>
+  <div class="wrap-footer divprincipal">
+    <div class="row block09">
+      <div class="col-2-4">
+        <div class="wrap-col">
+          <div class="box">
+            <span class="mw-headline" id="sobre">
+            <div class="heading"><h2>Sobre</h2></div></span>
+            <div class="content">
+              <p>O ICflix é um provedor de filmes e séries de televisão via streaming, atualmente com mais de 500 mil assinantes.</p>
+              <p>Fundada em 2017 em Alagoas, atualmente tornou-se a plataforma mais popular na região do nordeste.</p>
+              <p>A expansão do streaming começou por Maceió no início de Janeiro.</p>
+              <p>Hoje, mais de 15 cidades têm acesso à plataforma, que disponibiliza do primeiro mês de assinatura grátis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-2-4">
+        <div class="wrap-col">
+          <div class="box">
+            <span class="mw-headline" id="servicos">
+            <div class="heading"><h2>Serviços</h2></div></span>
+            <div class="content">
+              <p>O ICflix disponibiliza três planos de transmissão para atender ao seu estilo:</p>
+              <p><strong>• Plano básico:</strong> plano de 1 tela SD (assista em 1 aparelho de cada vez em definição padrão).</p>
+              <p><strong>• Plano padrão:</strong> plano de 2 telas HD (assista em 2 aparelhos de cada vez e em alta definição, quando disponível).</p>
+              <p><strong>• Plano premium:</strong> plano de 4 telas HD/Ultra HD 4K (assista em até 4 aparelhos de cada vez em alta definição e em ultra-alta definição, quando disponível).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social-icons">
+            <ul class="social-icons">
+                <li><a href="http://www.facebook.com/ICflix" target="_blank" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+                <li><a href="http://www.twitter.com/icflixoficial" target="_blank" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+                <li><a href="http://www.instagram.com/icflixbr" target="_blank" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
+                <li><a href="http://www.youtube.com/icflixchannel" target="_blank" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+            </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body></html>
